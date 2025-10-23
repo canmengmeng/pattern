@@ -7,14 +7,13 @@ authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" 
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["python"]
-requires-python = ">=3.11,<4"
+requires-python = ">=3.13,<4"
 classifiers = [
     "{{cookiecutter.development_status}}",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
 ]
 dependencies = [
@@ -25,7 +24,7 @@ dev = [
     {%- if cookiecutter.typechecker == 'ty' %}
     "ty>=0.0.1a11",
     {% else %}
-    "mypy >=1.16.1",
+    "mypy>=1.16.1",
     {%- endif %}
     {%- if cookiecutter.include_nox == 'y' %}
     "nox>=2025.5.1",
