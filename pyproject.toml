@@ -48,7 +48,6 @@ tests = { cmd = "pytest --color=yes tests", help = "Run all tests using pytest" 
 nox = { cmd = "nox -s tests", help = "Run tests in a nox session" }
 docs = { cmd = "zensical build", help = "Build documentation using zensical" }
 serve = { cmd = "zensical serve", help = "Serve documentation using zensical" }
-publish = { cmd = "mkdocs gh-deploy", help = "Publish documentation to GitHub Pages" }
 upgrade = { cmd = "uv sync --upgrade", help = "Upgrade all dependencies to lastest versions."}
 
 [tool.ruff]
