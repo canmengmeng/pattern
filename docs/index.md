@@ -64,6 +64,6 @@ For any questions or comments heres how you can reach me:
 
 **Follow me on [Github @wyattferguson](https://github.com/wyattferguson)**
 
-**Email me at [wyattxdev@duck.com](wyattxdev@duck.com)**
+**Email me at [wyattxdev@duck.com](mailto:wyattxdev@duck.com)**
 
 **Follow on [BlueSky @wyattf](https://wyattf.bsky.social)**

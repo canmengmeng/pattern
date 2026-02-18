@@ -7,14 +7,13 @@ authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" 
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["python"]
-requires-python = ">=3.11,<4"
+requires-python = ">=3.13,<4"
 classifiers = [
     "{{cookiecutter.development_status}}",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
 ]
 dependencies = [
@@ -23,16 +22,16 @@ dependencies = [
 [dependency-groups]
 dev = [
     {%- if cookiecutter.typechecker == 'ty' %}
-    "ty>=0.0.1a11",
+    "ty>=0.0.17",
     {% else %}
-    "mypy >=1.16.1",
+    "mypy>=1.19.1",
     {%- endif %}
     {%- if cookiecutter.include_nox == 'y' %}
-    "nox>=2025.5.1",
+    "nox>=2026.2.9",
     {%- endif %}
-    "pytest>=8.4.1",
+    "pytest>=9.0.2",
     "coverage>=7.8.2",
-    "ruff>=0.12.0",
+    "ruff>=0.15.1",
     "taskipy>=1.14.1",
     {%- if cookiecutter.include_docs == 'y' %}
     "portray>=1.8.0",
@@ -76,6 +75,7 @@ nox = { cmd = "nox -s tests", help = "Run tests in a nox session" }
 {%- endif %}
 coverage = { cmd = "coverage run -m pytest tests && coverage report", help = "Generate coverage report" }
 run = { cmd = "uv run ./src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py", help = "Run main application" }
+upgrade = { cmd = "uv sync --upgrade", help = "Upgrade all dependencies to lastest versions."}
 
 [tool.ruff]
 line-length = 100

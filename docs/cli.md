@@ -34,6 +34,9 @@ task serve
 
 # generate static HTML docs (outputs to ./site/)
 task html
+
+# upgrade all dependencies to lastest versions
+task upgrade
 ```
 
 Also you can use the command `task --list` to see a complete list with helper text.
