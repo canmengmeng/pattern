@@ -19,6 +19,9 @@ task run
 
 # Tests
 task tests
+
+# Test Coverage
+task coverage
 ```
 
 ## Tech Layers
