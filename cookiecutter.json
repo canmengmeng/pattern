@@ -50,6 +50,7 @@
     "include_code_of_conduct": "Include a code of conduct?",
     "include_citation": "Include a citation file?",
     "include_docker": "Include Docker support?",
+    "include_agents": "Include AGENTS.md for better coding agent support?",
     "pypi_deploy": "Include PyPI deployment scripts?"
   }
 }
