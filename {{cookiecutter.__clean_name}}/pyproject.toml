@@ -52,7 +52,7 @@ documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecut
 issues = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repository_name}}/issues"
 
 [build-system]
-requires = ["uv_build>=0.7.19,<0.8.0"]
+requires = ["uv_build>=0.10.4,<0.11.0"]
 build-backend = "uv_build"
 
 [tool.taskipy.tasks]
@@ -76,6 +76,10 @@ nox = { cmd = "nox -s tests", help = "Run tests in a nox session" }
 coverage = { cmd = "coverage run -m pytest tests && coverage report", help = "Generate coverage report" }
 run = { cmd = "uv run ./src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py", help = "Run main application" }
 upgrade = { cmd = "uv sync --upgrade", help = "Upgrade all dependencies to lastest versions."}
+{%- if cookiecutter.include_docker == 'y' %}
+dbuild = { cmd = "docker build --progress=plain -t \"{{cookiecutter.__clean_slug}}:Dockerfile\" .", help = "Build docker image" }
+drun = { cmd = "docker run --rm -it {{cookiecutter.__clean_slug}}:Dockerfile", help = "Run the built docker image" }
+{%- endif %}
 
 [tool.ruff]
 line-length = 100
@@ -114,7 +118,7 @@ ignore = [
 [tool.ty]
 src.root = "./src"
 environment.python = "./.venv"
-terminal.output-format = "concise"
+terminal.output-format = "full"
 {%- else %}
 [tool.mypy]
 files = ["src", "tests"]
