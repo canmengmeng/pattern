@@ -89,3 +89,8 @@ Ask first:
 - git push
 - deleting files, chmod
 - running full build or end to end suites
+
+### When stuck
+
+- ask a clarifying question, propose a short plan, or open a draft PR with notes
+- do not push large speculative changes without confirmation
