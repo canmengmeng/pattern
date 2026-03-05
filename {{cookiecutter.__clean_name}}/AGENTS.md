@@ -1,4 +1,4 @@
-# [Project Name]
+# {{cookiecutter.__clean_slug}}
 
 {{cookiecutter.project_description}}
 
