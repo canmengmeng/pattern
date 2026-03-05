@@ -75,4 +75,17 @@ task nox
 - Group related functions and classes
 - Files live in `{{cookiecutter.__clean_name}}/`
 
-### Additional Resources
+### Safety and permissions
+
+Allowed without prompt:
+
+- read files, list files
+- python single file, linting, formatting,
+- pytest single test
+
+Ask first:
+
+- package installs,
+- git push
+- deleting files, chmod
+- running full build or end to end suites
