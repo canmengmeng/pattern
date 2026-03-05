@@ -22,22 +22,28 @@ task tests
 
 # Test Coverage
 task coverage
+
+# Run tests via nox
+task nox
 ```
 
 ## Tech Layers
 
-- **Language**: Python
-- **Testing**: Pytest
+- **Language**: Python 3.11+
+- **Package Manager**: uv
+- **Testing**: pytest, pytest-cookies
+- **Linting**: ruff
 
 ## Project Structure
 
 ```
 {{cookiecutter.__clean_slug}}/
-├── src/
+├── src/                                        # App source code
     ├── {{cookiecutter.__clean_slug}}/          # Main app directory
         ├── {{cookiecutter.__clean_slug}}.py    # App entry point
-├── docs/   # App documentation
-├── tests/  # App tests
+├── docs/                                       # App documentation
+├── tests/                                      # App tests
+└── pyproject.toml                              # Project config
 ```
 
 ## Development Guidelines
@@ -53,12 +59,20 @@ task coverage
 - DON'T: Create new files unless necessary
 - DON'T: Skip tests for "simple" features
 
+### Testing Approach
+
+- All tests go in the `tests/` directory following the project structure
+- Tests should be runnable with `task tests` or `uv run pytest tests/`
+
 ### Naming Conventions
 
-- Constants: SCREAMING_SNAKE_CASE
+- Constants: `SCREAMING_SNAKE_CASE`
+- Functions/variables: `snake_case`
+- Classes: `PascalCase`
 
 ### File Organization
 
 - Group related functions and classes
+- Files live in `{{cookiecutter.__clean_name}}/`
 
 ### Additional Resources
