@@ -3,7 +3,7 @@ from typing import TypedDict
 
 
 class Recipe(TypedDict, total=True):
-    """A TypedDict to represent the recipe for a cookiecutter project."""
+    """Recipe for a cookiecutter project."""
 
     project_name: str
     project_slug: str
@@ -25,6 +25,7 @@ class Recipe(TypedDict, total=True):
     include_contributing_guide: str
     include_code_of_conduct: str
     include_docker: str
+    include_agents: str
     pypi_deploy: str
     excluded_files: list[str]
 
@@ -50,6 +51,7 @@ cookie_full_bake: Recipe = {
     "include_contributing_guide": "y",
     "include_code_of_conduct": "y",
     "include_docker": "y",
+    "include_agents": "y",
     "pypi_deploy": "y",
     "excluded_files": [],
 }
@@ -64,7 +66,7 @@ cookie_min_bake: Recipe = {
     "author": "Wyatt Ferguson",
     "github_username": "wyattferguson",
     "email": "wyattxdev@duck.com",
-    "license": "MIT",
+    "license": "None",
     "development_status": "Development Status :: 2 - Pre-Alpha",
     "typechecker": "ty",
     "include_docs": "n",
@@ -75,6 +77,7 @@ cookie_min_bake: Recipe = {
     "include_contributing_guide": "n",
     "include_code_of_conduct": "n",
     "include_docker": "n",
+    "include_agents": "n",
     "pypi_deploy": "n",
     "excluded_files": [
         "docs",
@@ -82,6 +85,7 @@ cookie_min_bake: Recipe = {
         "CHANGELOG.md",
         "CONTRIBUTING.md",
         "CODE_OF_CONDUCT.md",
+        "LICENSE",
         "Dockerfile",
         ".dockerignore",
         ".github/dependabot.yml",
@@ -99,7 +103,6 @@ required_files: list[str] = [
     "pyproject.toml",
     "README.md",
     "src",
-    "LICENSE",
     ".vscode/settings.json",
     ".vscode/extensions.json",
     ".gitignore",

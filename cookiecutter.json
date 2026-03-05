@@ -8,7 +8,7 @@
   "author": "Your Name",
   "github_username": "github_username",
   "email": "email@example.com",
-  "license": ["MIT", "ISC", "Apache-2.0", "GPL-3.0", "MPL-2.0"],
+  "license": ["MIT", "ISC", "Apache-2.0", "GPL-3.0", "MPL-2.0", "None"],
   "development_status": [
     "Development Status :: 1 - Planning",
     "Development Status :: 2 - Pre-Alpha",
@@ -27,6 +27,7 @@
   "include_code_of_conduct": "y",
   "include_citation": "y",
   "include_docker": "y",
+  "include_agents": "y",
   "pypi_deploy": "y",
   "_copy_without_render": [".github/*"],
   "_extensions": ["cookiecutter.extensions.SlugifyExtension"],

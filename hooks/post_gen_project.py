@@ -86,6 +86,9 @@ def prune_unwanted_files() -> None:
         remove(".github/workflows/release-publish.yml")
         remove(".github/workflows/release-drafter.yml")
 
+    if "{{cookiecutter.license}}" == "None":
+        remove("LICENSE")
+
 
 def setup_git() -> None:
     """Initialize a git repository and set up the initial commit."""
