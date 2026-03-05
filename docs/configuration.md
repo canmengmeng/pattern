@@ -53,7 +53,7 @@ On setup you have a choice of two typecheckers the stable [Mypy] and the up and 
 [tool.ty]
 src.root = "./src"
 environment.python = "./.venv"
-terminal.output-format = "concise"
+terminal.output-format = "full"
 ```
 
 [Mypy] default settings:

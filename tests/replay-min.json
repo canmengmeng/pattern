@@ -9,7 +9,7 @@
     "author": "Wyatt Ferguson",
     "github_username": "wyattferguson",
     "email": "wyattxdev@duck.com",
-    "license": "MIT",
+    "license": "None",
     "development_status": "Development Status :: 4 - Beta",
     "typechecker": "mypy",
     "include_docs": "n",
@@ -19,6 +19,7 @@
     "include_contributing_guide": "n",
     "include_code_of_conduct": "n",
     "include_docker": "n",
+    "include_agents": "n",
     "pypi_deploy": "n"
   }
 }

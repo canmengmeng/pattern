@@ -1,40 +1,41 @@
-# Stage 1 -----------------------------------------------------------
+# --- Builder stage ---
+# Use the official uv image (based on Debian Bookworm slim) as the build environment.
+# uv is used to resolve and install dependencies into a virtual environment.
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim AS builder
 
-# Build the application in the `/app` directory
-FROM ghcr.io/astral-sh/uv:bookworm-slim AS builder
+# Compile .pyc bytecode at install time so the runtime image starts faster,
+# and copy files into the venv instead of symlinking (required for multi-stage copies).
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 
-# Configure the Python directory so it is consistent
-ENV UV_PYTHON_INSTALL_DIR=/python
-
-# Only use the managed Python version
-ENV UV_PYTHON_PREFERENCE=only-managed
-
-# Install Python before the project for caching
-RUN uv python install 3.13
-
 WORKDIR /app
+
+# Copy only the files needed to resolve dependencies first.
+# This allows Docker to cache the dependency-install layer independently of source changes.
+COPY pyproject.toml uv.lock README.md ./
+# Install dependencies (excluding dev extras and the project itself) using the cache mount
+# to speed up repeated builds without storing the cache in the image layer.
 RUN --mount=type=cache,target=/root/.cache/uv \
-    --mount=type=bind,source=uv.lock,target=uv.lock \
-    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv sync --frozen --no-install-project --no-dev
-ADD . /app
+    uv sync --frozen --no-dev --no-install-project
+
+# Copy the project source code, then install the project itself into the venv.
+COPY src/ ./src/
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
-# Stage 2 -----------------------------------------------------------
 
-# Use a final image without uv
-FROM debian:bookworm-slim
+# --- Runtime stage ---
+# Use a minimal Python image without uv or build tools to keep the final image small.
+FROM python:3.13-slim
 
-# Copy the Python version
-COPY --from=builder --chown=python:python /python /python
+WORKDIR /app
 
-# Copy the application from the builder
-COPY --from=builder --chown=app:app /app /app
+# Copy only the virtual environment and source from the builder stage,
+# leaving behind uv, caches, and any other build-time artifacts.
+COPY --from=builder /app/.venv /app/.venv
+COPY --from=builder /app/src /app/src
 
-# Place executables in the environment at the front of the path
+# Prepend the venv's bin directory to PATH so the venv's Python and scripts are used.
 ENV PATH="/app/.venv/bin:$PATH"
 
-# Run the application
-CMD ["python","app/src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py"]
+# Run the project's main module as the container's default command.
+CMD ["python","-m","app.src.{{cookiecutter.__clean_slug}}.{{cookiecutter.__clean_slug}}"]

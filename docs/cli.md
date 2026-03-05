@@ -37,6 +37,12 @@ task html
 
 # upgrade all dependencies to lastest versions
 task upgrade
+
+# build Docker image
+task dbuild
+
+# run Docker image
+task drun
 ```
 
 Also you can use the command `task --list` to see a complete list with helper text.
