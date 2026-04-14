@@ -149,6 +149,9 @@ indent-style = "space"
 [tool.ty]
 terminal.output-format = "full"
 
+[tool.ty.environment]
+python = ".venv"
+
 [tool.ty.src]
 include = ["src/**/*.py"]
 {%- else %}
