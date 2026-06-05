@@ -22,15 +22,6 @@ Python 3.13, uv, pytest, ruff, ty, taskipy
 - Focused files, max 1000 lines.
 - Validate changed code with Ruff, Ty, and relevant tests.
 
-### Safety and permissions
-
-Ask first:
-
-- package installs,
-- git push
-- deleting files, chmod
-- running full build or end to end suites
-
 ## Commands
 
 - Format: "task format"
@@ -38,7 +29,11 @@ Ask first:
 - Type Checking: "task type"
 - Tests: "task tests"
 - Test Coverage: "task coverage"
+  {%- if cookiecutter.include_nox == 'y' %}
 - Nox Version Testing: "task nox"
+  {%- endif %}
 - Run App: "task run"
+  {%- if cookiecutter.include_docker == 'y' %}
 - Docker Build: "task dbuild"
 - Docker Run Image: "task drun"
+  {%- endif %}
