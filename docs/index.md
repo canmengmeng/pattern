@@ -27,7 +27,7 @@ Everything comes preconfigured to work out of the box. On setup you can pick and
 
 - :package: [UV](https://docs.astral.sh/uv/) - Package and project manager.
 - :crab: [Ruff](https://docs.astral.sh/ruff/) - Linter and code formatter.
-- :bug: Typechecking with [Ty](https://github.com/astral-sh/ty) or [Mypy](https://www.mypy-lang.org/).
+- :bug: Typechecking with [Ty](https://github.com/astral-sh/ty).
 - :test_tube: [Pytest](https://docs.pytest.org/en/stable/) - Testing.
 - :telescope: [Coverage](https://coverage.readthedocs.io/en/7.6.12/) - Test coverage.
 - :shaved_ice: [Nox](https://nox.thea.codes/en/stable/index.html) - Testing in multiple Python environments.
