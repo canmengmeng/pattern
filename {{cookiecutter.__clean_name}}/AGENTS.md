@@ -40,3 +40,5 @@ Ask first:
 - Test Coverage: "task coverage"
 - Nox Version Testing: "task nox"
 - Run App: "task run"
+- Docker Build: "task dbuild"
+- Docker Run Image: "task drun"

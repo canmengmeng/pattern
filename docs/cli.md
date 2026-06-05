@@ -17,7 +17,7 @@ task nox
 # run test coverage and generate report
 task coverage
 
-# typechecking with Ty or Mypy
+# typechecking with Ty
 task type
 
 # ruff linting
