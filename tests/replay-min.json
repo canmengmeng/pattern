@@ -11,7 +11,6 @@
     "email": "wyattxdev@duck.com",
     "license": "None",
     "development_status": "Development Status :: 4 - Beta",
-    "typechecker": "mypy",
     "include_docs": "n",
     "include_nox": "n",
     "include_dbot": "n",
