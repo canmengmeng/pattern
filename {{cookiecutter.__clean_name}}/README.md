@@ -8,13 +8,13 @@ Installation is using [UV](https://docs.astral.sh/uv/) to manage everything.
 
 **Step 1**: Create a virtual environment
 
-```
+```bash
 uv venv
 ```
 
 **Step 2**: Activate your new environment
 
-```
+```bash
 # on windows
 .venv\Scripts\activate
 
@@ -24,7 +24,7 @@ source .venv/bin/activate
 
 **Step 3**: Install all the cool dependencies
 
-```
+```bash
 uv sync
 ```
 
@@ -33,7 +33,7 @@ uv sync
 To add your new project to its Github repository, firstly make sure you have created a project named **{{cookiecutter.repository_name}}** on Github.
 Follow these steps to push your new project.
 
-```
+```bash
 git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.repository_name}}.git
 git branch -M main
 git push -u origin main
@@ -43,7 +43,7 @@ git push -u origin main
 
 We've included a bunch of useful CLI commands for common project tasks using [taskipy](https://github.com/taskipy/taskipy).
 
-```
+```bash
 # run src/{{cookiecutter.__clean_slug}}/{{cookiecutter.__clean_slug}}.py
 task run
 
@@ -58,7 +58,7 @@ task nox
 # run test coverage and generate report
 task coverage
 
-# typechecking with Ty or Mypy
+# typechecking with Ty
 task type
 
 # ruff linting
@@ -76,14 +76,14 @@ A Dockerfile optimized to reduce the image size has been included. To get it up 
 
 **Step 1**: Build your Docker image.
 
-```
-docker build --progress=plain -t "{{cookiecutter.__clean_slug}}:Dockerfile" .
+```bash
+task dbuild
 ```
 
 **Step 2**: Run your new image.
 
-```
-docker run --rm {{cookiecutter.__clean_slug}}:Dockerfile
+```bash
+task drun
 ```
 
 {%- endif %}
@@ -105,7 +105,7 @@ docker run --rm {{cookiecutter.__clean_slug}}:Dockerfile
 
 Doc generation is setup to scan everything inside `/src`, files with a prefix `_` will be ignored. Basic doc functions for generating, serving, and publishing can be done through these CLI commands:
 
-```
+```bash
 # generate docs & serve
 task docs
 

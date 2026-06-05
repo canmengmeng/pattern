@@ -61,6 +61,4 @@ hooks:
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 
 [Dependabot]: https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide
-[GitHub Actions]: https://docs.github.com/en/actions
-[Release Drafter]: https://github.com/release-drafter/release-drafter
 [Pull Request Title Enforcer]: https://github.com/marketplace/actions/pull-request-title-naming-rules

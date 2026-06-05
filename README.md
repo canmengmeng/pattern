@@ -27,10 +27,10 @@ Then just follow the prompts, pick the tools you want to install, and watch the 
 
 Everything comes pre-configured to work out of the box. On setup you can pick and choose what extras to install or to leave behind.
 
-- :package: [UV](https://docs.astral.sh/uv/) - Package and project manager
+- :package: [UV](https://docs.astral.sh/uv/) - Package and project manager.
 - :crab: [Ruff](https://docs.astral.sh/ruff/) - Linter and code formatter.
 - :bug: Typechecking with [Ty](https://github.com/astral-sh/ty) or [Mypy](https://www.mypy-lang.org/).
-- :test_tube: [Pytest](https://docs.pytest.org/en/stable/) - Testing
+- :test_tube: [Pytest](https://docs.pytest.org/en/stable/) - Testing.
 - :telescope: [Coverage](https://coverage.readthedocs.io/en/7.6.12/) - Test coverage.
 - :shaved_ice: [Nox](https://nox.thea.codes/en/stable/index.html) - Testing in multiple Python environments.
 - :small_airplane: [Taskipy](https://github.com/taskipy/taskipy) - Task runner for CLI shortcuts.
@@ -42,9 +42,10 @@ Everything comes pre-configured to work out of the box. On setup you can pick an
 - :whale2: [Docker](https://www.docker.com/) support including extensive dockerignore file.
 - :cocktail: [VSCode](https://code.visualstudio.com/) - Settings and extension integrations.
 - :robot: [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) - Dependency scanning for new versions and security alerts.
-- :mage_man: Semantic Pull Requests - Enforce pull request titles
+- :mage_man: Semantic Pull Requests - Enforce pull request titles.
 - 🚚 [Cruft Support](https://cruft.github.io/cruft/) - Automatic template updates and validation.
-- :space_invader: [AGENTS.md](https://agents.md/) - Code guidelines for AI agents to better navigate your project and reduce errors.
+- :space_invader: [AGENTS.md](https://agents.md/) - Guidelines for AI agents to better navigate your project, reduce token usage, and better maintain code quality.
+- :stopwatch: Package update delay of 1 week, to reduce chances of installing rogue packages.
 
 ## Alternative Cookiecutter Projects
 

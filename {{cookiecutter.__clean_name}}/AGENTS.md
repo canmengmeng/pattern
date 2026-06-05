@@ -1,96 +1,39 @@
 # {{cookiecutter.__clean_slug}}
 
-{{cookiecutter.project_description}}
+## version: 1.0.0
 
-## Development Setup
+## Stack
 
-```bash
-# Installation
-uv sync
+Python 3.13, uv, pytest, ruff, ty, taskipy
 
-# Lint
-task lint
+## Reply
 
-# Format
-task format
+- Be concise. Prioritize code and direct answers.
+- Default to 1 short paragraph; use bullets only when content is inherently list-shaped.
+- Use tables for stats and benchmarks.
+- No recap, no praise, no filler, no narration.
+- Prefer fragments over full prose where clarity is unchanged.
+- Ask only for ambiguity, destructive ops, public API changes, secrets, or conflicting dirty worktree edits.
 
-# Run
-task run
+## Code
 
-# Tests
-task tests
+- Write pythonic code, type hints, docstrings, and absolute imports.
+- Small functions, max line length 100 characters.
+- Focused files, max 1000 lines.
+- Validate changed code with Ruff, Ty, and relevant tests.
 
-# Test Coverage
-task coverage
+## Commands
 
-# Run tests via nox
-task nox
-```
-
-## Tech Layers
-
-- **Language**: Python 3.11+
-- **Package Manager**: uv
-- **Testing**: pytest, pytest-cookies
-- **Linting**: ruff
-
-## Project Structure
-
-```
-{{cookiecutter.__clean_slug}}/
-├── src/                                        # App source code
-    ├── {{cookiecutter.__clean_slug}}/          # Main app directory
-        ├── {{cookiecutter.__clean_slug}}.py    # App entry point
-├── docs/                                       # App documentation
-├── tests/                                      # App tests
-└── pyproject.toml                              # Project config
-```
-
-## Development Guidelines
-
-### Key Principles
-
-- DO: Prioritize readability and maintainability
-- DO: Write tests for new features
-- DO: Check existing functions before creating new ones
-- DO: Follow established patterns in the codebase
-- DO: Keep functions small and focused
-- DO: Include typehinting for all created code
-- DON'T: Create new files unless necessary
-- DON'T: Skip tests for "simple" features
-
-### Testing Approach
-
-- All tests go in the `tests/` directory following the project structure
-- Tests should be runnable with `task tests` or `uv run pytest tests/`
-
-### Naming Conventions
-
-- Constants: `SCREAMING_SNAKE_CASE`
-- Functions/variables: `snake_case`
-- Classes: `PascalCase`
-
-### File Organization
-
-- Group related functions and classes
-- Files live in `{{cookiecutter.__clean_name}}/`
-
-### Safety and permissions
-
-Allowed without prompt:
-
-- read files, list files
-- python single file, linting, formatting,
-- pytest single test
-
-Ask first:
-
-- package installs,
-- git push
-- deleting files, chmod
-- running full build or end to end suites
-
-### When stuck
-
-- ask a clarifying question, propose a short plan, or open a draft PR with notes
-- do not push large speculative changes without confirmation
+- Format: "task format"
+- Lint: "task lint"
+- Type Checking: "task type"
+- Tests: "task tests"
+- Test Coverage: "task coverage"
+  {%- if cookiecutter.include_nox == 'y' %}
+- Nox Version Testing: "task nox"
+  {%- endif %}
+- Run App: "task run"
+  {%- if cookiecutter.include_docker == 'y' %}
+- Docker Build: "task dbuild"
+- Docker Run Image: "task drun"
+  {%- endif %}

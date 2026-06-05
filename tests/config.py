@@ -16,7 +16,6 @@ class Recipe(TypedDict, total=True):
     email: str
     license: str
     development_status: str
-    typechecker: str
     include_docs: str
     include_nox: str
     include_dbot: str
@@ -42,7 +41,6 @@ cookie_full_bake: Recipe = {
     "email": "wyattxdev@duck.com",
     "license": "MIT",
     "development_status": "Development Status :: 4 - Beta",
-    "typechecker": "mypy",
     "include_docs": "y",
     "include_nox": "y",
     "include_dbot": "y",
@@ -68,7 +66,6 @@ cookie_min_bake: Recipe = {
     "email": "wyattxdev@duck.com",
     "license": "None",
     "development_status": "Development Status :: 2 - Pre-Alpha",
-    "typechecker": "ty",
     "include_docs": "n",
     "include_nox": "n",
     "include_dbot": "n",
@@ -85,6 +82,7 @@ cookie_min_bake: Recipe = {
         "CHANGELOG.md",
         "CONTRIBUTING.md",
         "CODE_OF_CONDUCT.md",
+        "AGENTS.md",
         "LICENSE",
         "Dockerfile",
         ".dockerignore",

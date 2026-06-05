@@ -20,4 +20,3 @@ PyPI has a [test package publishing index](https://test.pypi.org/) for you to wo
 - [GitHub Actions Guide](https://docs.github.com/en/actions/writing-workflows/quickstart)
 
 [PyPI]: https://pypi.org
-[GitHub Action]: https://docs.github.com/en/actions/writing-workflows/quickstart
