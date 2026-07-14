@@ -5,9 +5,9 @@
   "__clean_name": "{{cookiecutter.project_name|slugify(separator='-')}}",
   "__clean_slug": "{{cookiecutter.project_slug|slugify(separator='_')}}",
   "project_description": "A brief description of your project.",
-  "author": "Your Name",
-  "github_username": "github_username",
-  "email": "email@example.com",
+  "author": "Song.Guo",
+  "github_username": "canmengmeng",
+  "email": "ssguozz@gmail.com",
   "license": ["MIT", "ISC", "Apache-2.0", "GPL-3.0", "MPL-2.0", "None"],
   "development_status": [
     "Development Status :: 1 - Planning",
